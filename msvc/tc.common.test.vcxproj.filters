@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="tc">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\srcs\tc.common.tests\container_of.test.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common.tests\stdafx.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common.tests\tc.common.test.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\srcs\tc.common.tests\stdafx.h">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common.tests\targetver.h">
+      <Filter>tc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

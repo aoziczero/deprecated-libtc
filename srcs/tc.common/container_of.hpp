@@ -1,19 +1,23 @@
 #ifndef __tc_container_of_h__
 #define __tc_container_of_h__
 
-namespace tc {
+#define tc_offset_of(type,member)((ptrdiff_t)&((type*)0)->member)
 
-#define macro_offset_of(type,member)((int)&((type*)0)->member)
-
-#define macro_container_of( ptr , type , member )({\
+#if defined( _WIN32 )
+#define tc_container_of(ptr, type, member)  ((type *)((uint8_t*)(ptr) - tc_offset_of(type,member)))
+#else
+#define tc_container_of( ptr , type , member )({\
 	const typeof(((type*)0)->member ) * __mptr = (ptr);\
-	(type*)((char*)__mptr-macro_offset_of(type,member));})
+	(type*)((char*)__mptr-tc_offset_of(type,member));})
+#endif
 
+
+namespace tc {
 	/*!
 	 * @brief boost/intrusive/detail/parent_from_member.hpp
 	 */
 	template < class Parent , class Member >
-	std::ptrdiff_t offset_from_pointer_to_member( const Member Parent::*ptr_to_member ){
+	std::ptrdiff_t offset_of( const Member Parent::*ptr_to_member ){
 		const Parent * const parent = nullptr;
 		const char *const member = static_cast<const char*>(
 				static_cast<const void*>(&(parent->*ptr_to_member)));
@@ -24,7 +28,7 @@ namespace tc {
 
 
 	template<class Parent, class Member>
-	inline Parent* parent_from_member(Member *member, const Member Parent::* ptr_to_member)
+	inline Parent* container_of(Member *member, const Member Parent::* ptr_to_member)
 	{
 		return static_cast<Parent*>(
 				static_cast<void*>(
@@ -35,11 +39,11 @@ namespace tc {
 	}
 
 	template<class Parent, class Member>
-	inline const Parent *parent_from_member(const Member *member, const Member Parent::* ptr_to_member)
+	inline const Parent *container_of(const Member *member, const Member Parent::* ptr_to_member)
 	{
 		return static_cast<const Parent*>(
 			 static_cast<const void*>(
-			  static_cast<const char*>(static_cast<const void*>(member)) - offset_from_pointer_to_member(ptr_to_member)
+			  static_cast<const char*>(static_cast<const void*>(member)) - offset_of(ptr_to_member)
 			 )
 			);
 	}
