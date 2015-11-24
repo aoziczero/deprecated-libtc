@@ -1,0 +1,15 @@
+include makepre
+
+TARGET=libtc.common
+SRC_ROOT=../srcs
+SRCS=tc.common/tc.cpp\
+	 tc.common/container_of.cpp\
+
+OUT_DIR=../build
+
+SO_MAJOR=1
+SO_MINOR=0
+CFLAGS=
+
+include makepost_static
+include makepost_shared

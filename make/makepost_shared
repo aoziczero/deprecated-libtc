@@ -1,0 +1,27 @@
+#SRCS , TARGET , OUT_DIR , CFLAGS , SO_MAJOR , SO_MINOR , SRC_ROOT
+SO_NAME=$(TARGET).so.$(SO_MAJOR)
+SO_REAL_NAME=$(SO_NAME).$(SO_MINOR)
+
+SO_OBJS_DIR=$(OUT_DIR)/$(TARGET)/shared
+SO_OBJS=$(SRCS:%.cpp=$(SO_OBJS_DIR)/%.o)
+
+ifeq ($(OS),Darwin)
+SO_CFLAGS=$(CFLAGS) -shared -Wl,-install_name,$(SO_NAME)
+else
+SO_CFLAGS=$(CFLAGS) -shared -Wl,-so_name,$(SO_NAME)
+endif
+
+SO_TARGET=$(SO_OBJS_DIR)/$(SO_REAL_NAME)
+
+shared: $(SO_TARGET)
+
+$(SO_TARGET):$(SO_OBJS)
+	$(CC) $(SO_CFLAGS) -o $@ $(SO_OBJS)
+
+$(SO_OBJS_DIR)/%.o: $(SRC_ROOT)/%.cpp
+	@echo "Compile=$(dir $@)"
+	@`[ -d $(dir $@) ] || $(MKDIR) $(dir $@)`
+	$(CC) $(CFLAGS) -fPIC -c $< -o $@
+
+shared_clean:
+	rm -rf $(SO_OBJS_DIR)

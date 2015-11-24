@@ -1,0 +1,20 @@
+#SRCS , TARGET , OUT_DIR , CFLAGS , SRC_ROOT , LDFLAGS
+APP_NAME=$(TARGET).app
+
+APP_OBJS_DIR=$(OUT_DIR)/$(TARGET)/app
+APP_OBJS=$(SRCS:%.cpp=$(APP_OBJS_DIR)/%.o)
+
+APP_TARGET=$(APP_OBJS_DIR)/$(APP_NAME)
+
+app: $(APP_TARGET)
+
+$(APP_TARGET):$(APP_OBJS)
+	$(CC) $(APP_CFLAGS) $(LDFLAGS) -o $@ $(APP_OBJS)
+
+$(APP_OBJS_DIR)/%.o: $(SRC_ROOT)/%.cpp
+	@echo "Compile=$(dir $@)"
+	@`[ -d $(dir $@) ] || $(MKDIR) $(dir $@)`
+	$(CC) $(CFLAGS) -c $< -o $@
+
+app_clean:
+	rm -rf $(APP_OBJS_DIR)

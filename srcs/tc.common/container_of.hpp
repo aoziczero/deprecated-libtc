@@ -2,15 +2,10 @@
 #define __tc_container_of_h__
 
 #define tc_offset_of(type,member)((ptrdiff_t)&((type*)0)->member)
-
-#if defined( _WIN32 )
 #define tc_container_of(ptr, type, member)  ((type *)((uint8_t*)(ptr) - tc_offset_of(type,member)))
-#else
-#define tc_container_of( ptr , type , member )({\
-	const typeof(((type*)0)->member ) * __mptr = (ptr);\
-	(type*)((char*)__mptr-tc_offset_of(type,member));})
-#endif
-
+//#define tc_container_of( ptr , type , member )({\
+//	const typeof(((type*)0)->member ) * __mptr = (ptr);\
+//	(type*)((char*)__mptr-tc_offset_of(type,member));})
 
 namespace tc {
 	/*!

@@ -20,10 +20,14 @@ TEST(container_of, get_value) {
 	test_container_of tco = { nullptr,  {nullptr,nullptr}};
 	list_entry* pentry = &tco.entry;
 
+	
+
 	ASSERT_EQ(tc_offset_of(test_container_of, entry)
 		, sizeof(void*));
 	ASSERT_EQ(tc_offset_of(test_container_of, entry)
 		, tc::offset_of(&test_container_of::entry));
+
+	test_container_of* tco2 = tc_container_of( pentry , test_container_of , entry );
 
 	ASSERT_EQ(tc_container_of(pentry, test_container_of, entry)
 		, tc::container_of(pentry, &test_container_of::entry));

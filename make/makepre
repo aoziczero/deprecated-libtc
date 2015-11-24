@@ -1,0 +1,32 @@
+# make ARCH_ARM=1...
+RM=rm
+MKDIR=mkdir -p
+DEPEND_FILE=depend
+OS := $(shell uname)
+
+ifdef ARCH_ARM
+
+CC=g++
+AR=ar
+RANLIB=ranlib
+TARGET_ARCH=arm
+
+else
+
+ifdef ARCH_X86
+CC=g++
+AR=ar
+RANLIB=ranlib
+TARGET_ARCH=x86
+
+else
+
+CC=g++
+AR=ar
+RANLIB=ranlib
+TARGET_ARCH=x64
+
+endif
+endif
+
+
