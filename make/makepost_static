@@ -1,11 +1,13 @@
 #SRCS , TARGET , OUT_DIR , CFLAGS , SRC_ROOT
-
+STATIC_FLAG=1
 STATIC_NAME=$(TARGET).lib
 
 STATIC_OBJS_DIR=$(OUT_DIR)/$(TARGET)/static
 STATIC_OBJS=$(SRCS:%.cpp=$(STATIC_OBJS_DIR)/%.o)
 
 STATIC_TARGET=$(STATIC_OBJS_DIR)/$(STATIC_NAME)
+
+STATIC_CFLAGS=$(CPPFLAGS)
 
 static: $(STATIC_TARGET)
 
@@ -18,7 +20,7 @@ $(STATIC_TARGET):$(STATIC_OBJS)
 $(STATIC_OBJS_DIR)/%.o: $(SRC_ROOT)/%.cpp
 	@echo "Compile=$(dir $@)"
 	@`[ -d $(dir $@) ] || $(MKDIR) $(dir $@)`
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(STATIC_CFLAGS) -c $< -o $@
 
 static_clean:
 	rm -rf $(STATIC_OBJS_DIR)

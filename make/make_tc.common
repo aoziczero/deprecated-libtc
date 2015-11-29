@@ -13,3 +13,4 @@ CFLAGS=
 
 include makepost_static
 include makepost_shared
+include makepost_common

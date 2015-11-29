@@ -7,7 +7,8 @@ SRCS=tc.common.tests/tc.common.test.cpp\
 
 OUT_DIR=../build
 
-CFLAGS= -std=c++11 -fpermissive -I../srcs -I/usr/local/include
-LDFLAGS= -L/usr/local/lib  -lpthread -lgtest
+CPPFLAGS= -std=c++11 -fpermissive -I../srcs -I/usr/local/include
+LDFLAGS= -L/usr/local/lib -lgtest -lpthread
 
 include makepost_app
+include makepost_common

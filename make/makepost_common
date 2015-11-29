@@ -1,0 +1,18 @@
+_all=
+
+ifeq ($(STATIC_FLAG),1)
+_all+=$(STATIC_TARGET)
+_clean+=static_clean
+endif
+ifeq ($(SO_FLAG),1)
+_all+=$(SO_TARGET)
+_clean+=so_clean
+endif
+ifeq ($(APP_FLAG),1)
+_all+=$(APP_TARGET)
+_clean+=app_clean
+endif
+
+all: $(_all)
+
+clean: $(_clean)
