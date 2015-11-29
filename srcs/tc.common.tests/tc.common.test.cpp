@@ -3,7 +3,10 @@
 
 #include "stdafx.h"
 
+#if defined( TC_WIN32 )
 #pragma comment( lib ,"gtest")
+#pragma comment( lib ,"tc.common.lib")
+#endif
 
 
 int main( int argc , char* argv[] )

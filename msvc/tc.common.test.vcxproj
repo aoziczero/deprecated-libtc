@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common.tests\container_of.test.cpp" />
+    <ClCompile Include="..\srcs\tc.common.tests\spinlock.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
