@@ -16,6 +16,8 @@ namespace tc {
 	using u64 = uint64_t;
 
 
+    int init();
+
 #if defined( _WIN32 )
 #ifndef TC_WIN32
 #define TC_WIN32

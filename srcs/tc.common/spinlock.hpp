@@ -15,8 +15,8 @@ namespace tc {
 namespace threading {
 
 /*!
-*  @class  spinlock
-*  @bried  os º° spinlock wrapper
+*  \class  spinlock
+*  \brief  spinlock wrapper
 */
 class spinlock {
 public:
@@ -28,14 +28,13 @@ public:
 	bool trylock(void);
 
 	/*!
-	*  @class  guard
-	*  @bried  raii lock guard
+	*  \class  guard
+	*  \bried  raii lock guard
 	*/
 	class guard {
 	public:
 		guard(spinlock& lock)
-			: _lock(lock)
-		{
+			: _lock(lock){
 			_lock.lock();
 		}
 
