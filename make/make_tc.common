@@ -4,8 +4,10 @@ TARGET=libtc.common
 SRC_ROOT=../srcs
 SRCS=tc.common/tc.cpp\
 	 tc.common/container_of.cpp\
+     tc.common/spinlock.cpp\
 
 OUT_DIR=../build
+CPPFLAGS+=-I../srcs
 
 SO_MAJOR=1
 SO_MINOR=0

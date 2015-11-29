@@ -4,11 +4,13 @@ TARGET=libtc.common.tests
 SRC_ROOT=../srcs
 SRCS=tc.common.tests/tc.common.test.cpp\
 	 tc.common.tests/container_of.test.cpp\
+     tc.common.tests/spinlock.test.cpp\
 
 OUT_DIR=../build
 
 CPPFLAGS= -std=c++11 -fpermissive -I../srcs -I/usr/local/include
-LDFLAGS= -L/usr/local/lib -lgtest -lpthread
+LDFLAGS= -L/usr/local/lib -lgtest -lpthread 
+LDFLAGS+= -L./../build/libtc.common/static -ltc.common
 
 include makepost_app
 include makepost_common
