@@ -1,7 +1,7 @@
 #ifndef __tc_threading_spinlock_h__
 #define __tc_threading_spinlock_h__
 
-#include "tc.common/tc.hpp"
+#include <tc.common/tc.hpp>
 
 #if defined( TC_WIN32 )
 

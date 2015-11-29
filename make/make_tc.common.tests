@@ -5,6 +5,7 @@ SRC_ROOT=../srcs
 SRCS=tc.common.tests/tc.common.test.cpp\
 	 tc.common.tests/container_of.test.cpp\
      tc.common.tests/spinlock.test.cpp\
+	 tc.common.tests/simple_block.test.cpp\
 
 OUT_DIR=../build
 
