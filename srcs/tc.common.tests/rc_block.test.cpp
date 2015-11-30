@@ -1,18 +1,17 @@
 #include "stdafx.h"
-#include "tc.common/simple_block.hpp"
 #include "tc.common/rc_block.hpp"
 
-TEST( simple_block , ctor ) {
+TEST( rc_block , ctor ) {
 
-	tc::buffer::simple_block block;
+	tc::buffer::rc_block block;
 	ASSERT_EQ( block.base() , nullptr );
 	ASSERT_EQ( block.size() , 0 );
 
 }
 
-TEST( simple_block , alloc_ctor ){
+TEST( rc_block , alloc_ctor ){
 
-	tc::buffer::simple_block block(24);
+	tc::buffer::rc_block block(24);
 
 	u8* buffer = block.base();
 	ASSERT_NE( buffer , nullptr );
@@ -26,14 +25,14 @@ TEST( simple_block , alloc_ctor ){
 
 }
 
-TEST( simple_block , assign ) {
-	tc::buffer::simple_block block(24);
-	tc::buffer::simple_block block2( block );
+TEST( rc_block , assign ) {
+	tc::buffer::rc_block block(24);
+	tc::buffer::rc_block block2( block );
 
-	ASSERT_NE( block.base() , block2.base());
+	ASSERT_EQ( block.base() , block2.base());
 	ASSERT_EQ( block.size() , block2.size());
 
-	tc::buffer::simple_block block3( std::move( block2 ));
+	tc::buffer::rc_block block3( std::move( block2 ));
 
 	ASSERT_EQ( block2.base() , nullptr );
 	block2 = std::move( block3 );

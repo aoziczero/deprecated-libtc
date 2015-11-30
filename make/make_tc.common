@@ -6,6 +6,7 @@ SRCS=tc.common/tc.cpp\
 	 tc.common/container_of.cpp\
      tc.common/spinlock.cpp\
 	 tc.common/simple_block.cpp\
+	 tc.common/rc_block.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs
