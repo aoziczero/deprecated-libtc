@@ -7,6 +7,8 @@ SRCS=tc.common/tc.cpp\
      tc.common/spinlock.cpp\
 	 tc.common/simple_block.cpp\
 	 tc.common/rc_block.cpp\
+	 tc.common/external_block.cpp\
+	 tc.common/byte_buffer.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs

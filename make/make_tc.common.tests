@@ -7,6 +7,7 @@ SRCS=tc.common.tests/tc.common.test.cpp\
      tc.common.tests/spinlock.test.cpp\
 	 tc.common.tests/simple_block.test.cpp\
 	 tc.common.tests/rc_block.test.cpp\
+	 tc.common.tests/byte_buffer.test.cpp\
 
 OUT_DIR=../build
 

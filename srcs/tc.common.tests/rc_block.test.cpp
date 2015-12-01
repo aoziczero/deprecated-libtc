@@ -18,11 +18,11 @@ TEST( rc_block , alloc_ctor ){
 	ASSERT_EQ( block.size() , 24 );
 	ASSERT_EQ( block.ref_count() , 1 );
 
-	block.reserve(32);
+	block.reserve(2048);
 
 	ASSERT_NE( buffer , block.base());
 	ASSERT_NE( block.base() , nullptr );
-	ASSERT_EQ( block.size() , 32 );
+	ASSERT_EQ( block.size() , 2048 );
 	ASSERT_EQ( block.ref_count() , 1 );
 }
 
