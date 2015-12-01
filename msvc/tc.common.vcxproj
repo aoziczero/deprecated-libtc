@@ -19,14 +19,22 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\srcs\tc.common\byte_buffer.hpp" />
     <ClInclude Include="..\srcs\tc.common\container_of.hpp" />
+    <ClInclude Include="..\srcs\tc.common\external_block.hpp" />
+    <ClInclude Include="..\srcs\tc.common\rc_block.hpp" />
+    <ClInclude Include="..\srcs\tc.common\simple_block.hpp" />
     <ClInclude Include="..\srcs\tc.common\spinlock.hpp" />
     <ClInclude Include="..\srcs\tc.common\stdafx.h" />
     <ClInclude Include="..\srcs\tc.common\targetver.h" />
     <ClInclude Include="..\srcs\tc.common\tc.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\srcs\tc.common\byte_buffer.cpp" />
     <ClCompile Include="..\srcs\tc.common\container_of.cpp" />
+    <ClCompile Include="..\srcs\tc.common\external_block.cpp" />
+    <ClCompile Include="..\srcs\tc.common\rc_block.cpp" />
+    <ClCompile Include="..\srcs\tc.common\simple_block.cpp" />
     <ClCompile Include="..\srcs\tc.common\spinlock.cpp" />
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

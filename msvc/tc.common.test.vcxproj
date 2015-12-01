@@ -19,7 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\srcs\tc.common.tests\byte_buffer.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\container_of.test.cpp" />
+    <ClCompile Include="..\srcs\tc.common.tests\rc_block.test.cpp" />
+    <ClCompile Include="..\srcs\tc.common.tests\simple_block.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\spinlock.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

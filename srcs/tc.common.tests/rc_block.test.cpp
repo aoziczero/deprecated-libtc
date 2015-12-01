@@ -41,7 +41,7 @@ TEST( rc_block , assign ) {
 	block2 = std::move( block3 );
 
 	ASSERT_EQ( block3.ref_count() , 0 );
-	ASSERT_EQ( block2.ref_count() , 0 );
+	ASSERT_EQ( block2.ref_count() , 2 );
 	
 	ASSERT_EQ( block3.base() , nullptr );
 	block3 = block2;
