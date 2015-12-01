@@ -8,5 +8,8 @@
    <Group
       location = "container:"
       name = "libtc">
+      <FileRef
+         location = "group:/Users/suhyangi/works/tk/libtc/xcode/tc.common/common.xcodeproj">
+      </FileRef>
    </Group>
 </Workspace>

@@ -92,4 +92,11 @@ void rc_block::release( void ) {
 	}
 }
 
+int rc_block::ref_count(void){
+	if ( _base == nullptr )
+		return 0;
+	std::atomic<tc::size_t>* rc = reinterpret_cast<std::atomic<tc::size_t>*>(_base) -1;
+	return rc->load();
+}
+
 }}

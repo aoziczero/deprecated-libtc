@@ -39,6 +39,7 @@ public:
 
 	void add_ref( void );
 	void release( void );
+	int  ref_count( void );
 private:
 	u8* _base;
 	tc::size_t _size;
