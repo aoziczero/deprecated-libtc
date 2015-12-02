@@ -20,6 +20,8 @@ TEST(byte_buffer, rc_block_refs) {
 	tc::buffer::byte_buffer< tc::buffer::rc_block > buffer2(buffer);
 
 	ASSERT_EQ(buffer.rd_ptr(), buffer2.rd_ptr());
+	buffer2.reserve(buffer2.capacity());
+	ASSERT_NE(buffer.rd_ptr(), buffer2.rd_ptr());
 }
 
 TEST(byte_buffer, external) {

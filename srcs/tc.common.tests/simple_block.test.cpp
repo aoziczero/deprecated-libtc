@@ -18,7 +18,7 @@ TEST( simple_block , alloc_ctor ){
 	ASSERT_NE( buffer , nullptr );
 	ASSERT_EQ( block.size() , 24 );
 
-	// mac osx use pool? 24 -> 32 reserve has same buffer
+	// mac osx 24 -> 32 reserve has same buffer
 	block.reserve(2048);
 
 	ASSERT_NE( buffer , block.base());

@@ -125,6 +125,9 @@ public:
 		_block.reserve(sz);
 	}
 
+	tc::size_t capacity(void) const {
+		return _block.size();
+	}
 public:
 	tc::size_t read(void* dst, const tc::size_t sz) {
 		tc::size_t cpysize = peak(dst, sz);
