@@ -22,6 +22,9 @@
     <ClInclude Include="..\srcs\tc.common\spinlock.hpp">
       <Filter>tc</Filter>
     </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\simple_block.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
@@ -34,6 +37,9 @@
       <Filter>tc</Filter>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\spinlock.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\simple_block.cpp">
       <Filter>tc</Filter>
     </ClCompile>
   </ItemGroup>

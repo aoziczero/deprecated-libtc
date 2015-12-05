@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\srcs\tc.common\container_of.hpp" />
+    <ClInclude Include="..\srcs\tc.common\simple_block.hpp" />
     <ClInclude Include="..\srcs\tc.common\spinlock.hpp" />
     <ClInclude Include="..\srcs\tc.common\stdafx.h" />
     <ClInclude Include="..\srcs\tc.common\targetver.h" />
@@ -27,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\container_of.cpp" />
+    <ClCompile Include="..\srcs\tc.common\simple_block.cpp" />
     <ClCompile Include="..\srcs\tc.common\spinlock.cpp" />
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

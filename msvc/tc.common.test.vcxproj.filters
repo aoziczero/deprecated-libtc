@@ -19,6 +19,9 @@
     <ClCompile Include="..\srcs\tc.common.tests\spinlock.test.cpp">
       <Filter>tc</Filter>
     </ClCompile>
+    <ClCompile Include="..\srcs\tc.common.tests\simple_block.test.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\srcs\tc.common.tests\stdafx.h">
