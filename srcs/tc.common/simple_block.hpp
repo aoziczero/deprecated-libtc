@@ -39,6 +39,7 @@ public:
 	void cleanup( void );
 
 	void swap( simple_block& rhs );
+
 private:
 	u8* _base;
 	tc::size_t _size;

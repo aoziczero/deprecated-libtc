@@ -16,15 +16,28 @@ using u64 = uint64_t;
 
 namespace tc {
 
+	template < class Header >
+	Header* header_cast(void* payload) {
+		return reinterpret_cast<Header*>(payload) - 1;
+	}
+
+	template < class Header >
+	u8* payload_cast(Header* hdr) {
+		return reinterpret_cast<u8*>(hdr + 1);
+	}
+
 	int init();
 
 #if defined(__x86_64__) || defined(_M_X64)
-using size_t = u64;
+using size_t = u64; 
+using int_t = s32;
 #elif defined(__i386) || defined(_M_IX86)
 using size_t = u32;
+using int_t = s32;
 #elif defined( _M_ARM ) || defined( _M_ARMT ) 
 || defined ( __arm__ ) || defined( __thumb__ )
 using size_t = u32;
+using int_t = s32;
 #endif
 
 	

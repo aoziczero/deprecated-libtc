@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "tc.common/simple_block.hpp"
+#include "tc.common/rc_block.hpp"
 
 TEST( simple_block , ctor ) {
 
@@ -17,11 +18,12 @@ TEST( simple_block , alloc_ctor ){
 	ASSERT_NE( buffer , nullptr );
 	ASSERT_EQ( block.size() , 24 );
 
-	block.reserve(32);
+	// mac osx 24 -> 32 reserve has same buffer
+	block.reserve(2048);
 
 	ASSERT_NE( buffer , block.base());
 	ASSERT_NE( block.base() , nullptr );
-	ASSERT_EQ( block.size() , 32 );
+	ASSERT_EQ( block.size() , 2048 );
 
 }
 

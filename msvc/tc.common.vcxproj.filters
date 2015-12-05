@@ -25,6 +25,18 @@
     <ClInclude Include="..\srcs\tc.common\simple_block.hpp">
       <Filter>tc</Filter>
     </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\rc_block.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\simple_block.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\byte_buffer.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\external_block.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
@@ -40,6 +52,18 @@
       <Filter>tc</Filter>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\simple_block.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\rc_block.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\simple_block.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\byte_buffer.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\external_block.cpp">
       <Filter>tc</Filter>
     </ClCompile>
   </ItemGroup>
