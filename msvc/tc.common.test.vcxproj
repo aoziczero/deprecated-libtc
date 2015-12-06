@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common.tests\byte_buffer.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\container_of.test.cpp" />
+    <ClCompile Include="..\srcs\tc.common.tests\function.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\rc_block.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\simple_block.test.cpp" />
     <ClCompile Include="..\srcs\tc.common.tests\spinlock.test.cpp" />

@@ -8,7 +8,7 @@ namespace tc { namespace buffer {
 namespace {
 
 union block_header {
-	std::atomic<tc::size_t> ref_count;
+	std::atomic<int> ref_count;
 	void* align;
 };
 

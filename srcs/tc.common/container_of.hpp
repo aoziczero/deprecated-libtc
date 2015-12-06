@@ -9,7 +9,7 @@
 
 namespace tc {
 	/*!
-	 * @brief boost/intrusive/detail/parent_from_member.hpp
+	 *
 	 */
 	template < class Parent , class Member >
 	std::ptrdiff_t offset_of( const Member Parent::*ptr_to_member ){

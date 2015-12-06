@@ -1,10 +1,7 @@
 #include "stdafx.h"
 #include "tc.hpp"
 
-namespace {
-
-int init(){
-    return 42;
-}
-
+int tc::init()
+{
+	return 42;
 }

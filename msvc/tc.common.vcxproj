@@ -22,6 +22,7 @@
     <ClInclude Include="..\srcs\tc.common\byte_buffer.hpp" />
     <ClInclude Include="..\srcs\tc.common\container_of.hpp" />
     <ClInclude Include="..\srcs\tc.common\external_block.hpp" />
+    <ClInclude Include="..\srcs\tc.common\function.hpp" />
     <ClInclude Include="..\srcs\tc.common\rc_block.hpp" />
     <ClInclude Include="..\srcs\tc.common\simple_block.hpp" />
     <ClInclude Include="..\srcs\tc.common\spinlock.hpp" />
