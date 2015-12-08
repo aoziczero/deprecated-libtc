@@ -13,6 +13,9 @@
       <Filter>tc\log</Filter>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.log\stdafx.cpp" />
+    <ClCompile Include="..\srcs\tc.log\logger.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\srcs\tc.log\tc.log.hpp">
@@ -20,5 +23,8 @@
     </ClInclude>
     <ClInclude Include="..\srcs\tc.log\stdafx.h" />
     <ClInclude Include="..\srcs\tc.log\targetver.h" />
+    <ClInclude Include="..\srcs\tc.log\logger.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
