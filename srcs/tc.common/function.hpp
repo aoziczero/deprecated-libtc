@@ -30,7 +30,7 @@ namespace tc {
 
 // template parameter
 #define TC_FUNCTION_TP_0
-#define TC_FUNCTION_TP_1	typename forward_traits< A1 >::type p1 
+#define TC_FUNCTION_TP_1 typename forward_traits< A1 >::type p1 
 #define TC_FUNCTION_TP_2 TC_FUNCTION_TP_1 , typename forward_traits< A2 >::type p2
 #define TC_FUNCTION_TP_3 TC_FUNCTION_TP_2 , typename forward_traits< A3 >::type p3
 #define TC_FUNCTION_TP_4 TC_FUNCTION_TP_3 , typename forward_traits< A4 >::type p4
@@ -38,7 +38,7 @@ namespace tc {
 
 // template forward
 #define TC_FUNCTION_TF_0
-#define TC_FUNCTION_TF_1	p1
+#define TC_FUNCTION_TF_1 p1
 #define TC_FUNCTION_TF_2 TC_FUNCTION_TF_1 , p2
 #define TC_FUNCTION_TF_3 TC_FUNCTION_TF_2 , p3
 #define TC_FUNCTION_TF_4 TC_FUNCTION_TF_3 , p4

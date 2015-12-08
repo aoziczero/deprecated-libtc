@@ -6,6 +6,7 @@
 #if defined( _WIN32 )
 #pragma once
 
+#pragma warning( disable : 4091 )
 #include "targetver.h"
 
 #define WIN32_LEAN_AND_MEAN         
