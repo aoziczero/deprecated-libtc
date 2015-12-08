@@ -1,0 +1,14 @@
+include makepre
+
+TARGET=libtc.log.tests
+SRC_ROOT=../srcs
+SRCS=tc.log.tests/tc.log.test.cpp\
+
+OUT_DIR=../build
+
+CPPFLAGS= -std=c++11 -fpermissive -I../srcs -I/usr/local/include
+LDFLAGS= -L/usr/local/lib -lgtest -lpthread 
+LDFLAGS+= -L./../build/libtc.log/static -ltc.log
+
+include makepost_app
+include makepost_common
