@@ -19,8 +19,10 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\srcs\tc.common\bit.hpp" />
     <ClInclude Include="..\srcs\tc.common\byte_buffer.hpp" />
     <ClInclude Include="..\srcs\tc.common\container_of.hpp" />
+    <ClInclude Include="..\srcs\tc.common\datetime.hpp" />
     <ClInclude Include="..\srcs\tc.common\external_block.hpp" />
     <ClInclude Include="..\srcs\tc.common\function.hpp" />
     <ClInclude Include="..\srcs\tc.common\operation.hpp" />
@@ -30,10 +32,13 @@
     <ClInclude Include="..\srcs\tc.common\stdafx.h" />
     <ClInclude Include="..\srcs\tc.common\targetver.h" />
     <ClInclude Include="..\srcs\tc.common\tc.hpp" />
+    <ClInclude Include="..\srcs\tc.common\timespan.hpp" />
+    <ClInclude Include="..\srcs\tc.common\timestamp.hpp" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\byte_buffer.cpp" />
     <ClCompile Include="..\srcs\tc.common\container_of.cpp" />
+    <ClCompile Include="..\srcs\tc.common\datetime.cpp" />
     <ClCompile Include="..\srcs\tc.common\external_block.cpp" />
     <ClCompile Include="..\srcs\tc.common\operation.cpp" />
     <ClCompile Include="..\srcs\tc.common\rc_block.cpp" />
@@ -46,6 +51,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\tc.cpp" />
+    <ClCompile Include="..\srcs\tc.common\timespan.cpp" />
+    <ClCompile Include="..\srcs\tc.common\timestamp.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AB658C9D-5799-4E5F-AB64-D042F0F4CBC1}</ProjectGuid>

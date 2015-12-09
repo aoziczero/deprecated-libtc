@@ -37,7 +37,7 @@ int day_counts( int sty , int endy ) {
 
 void convert( const s64 t , datetime::data& dt ) {
 	s64 tick = t;
-	dt.millisecond = ( tick / 1000 ) % 1000;
+	dt.millisecond = static_cast<s8 >( ( tick / 1000 ) % 1000 );
 	// to seconds	
 	tick /= ( 1000000 ) ;
 
@@ -48,8 +48,8 @@ void convert( const s64 t , datetime::data& dt ) {
 	static const int div_hour = 60 * 60;
 
 	dt.second = tick % mod_second;
-	dt.minute = tick % mod_minute / div_minute;
-	dt.hour   = tick % mod_hour / div_hour; 
+	dt.minute = static_cast< s8 >( (tick % mod_minute) / div_minute );
+	dt.hour   = static_cast< s8 >((tick % mod_hour) / div_hour );
 
 	static const int div_days = 60 * 60 * 24;
 

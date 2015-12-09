@@ -43,6 +43,18 @@
     <ClInclude Include="..\srcs\tc.common\operation.hpp">
       <Filter>tc</Filter>
     </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\timestamp.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\bit.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\datetime.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.common\timespan.hpp">
+      <Filter>tc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
@@ -73,6 +85,15 @@
       <Filter>tc</Filter>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\operation.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\datetime.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\timespan.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.common\timestamp.cpp">
       <Filter>tc</Filter>
     </ClCompile>
   </ItemGroup>
