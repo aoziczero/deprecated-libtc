@@ -9,6 +9,7 @@ OUT_DIR=../build
 
 CPPFLAGS= -std=c++11 -fpermissive -I../srcs -I/usr/local/include
 LDFLAGS= -L/usr/local/lib -lgtest -lpthread 
+LDFLAGS+= -L./../build/libtc.common/static -ltc.common
 LDFLAGS+= -L./../build/libtc.log/static -ltc.log
 
 include makepost_app

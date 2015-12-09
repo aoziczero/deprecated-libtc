@@ -5,8 +5,10 @@
 
 #if defined( TC_WIN32 )
 #pragma comment( lib ,"gtest")
+#pragma comment( lib ,"tc.common.lib")
 #pragma comment( lib ,"tc.log.lib")
 #endif
+
 
 
 int main( int argc , char* argv[] )
