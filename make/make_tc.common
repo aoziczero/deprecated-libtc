@@ -9,6 +9,9 @@ SRCS=tc.common/tc.cpp\
 	 tc.common/rc_block.cpp\
 	 tc.common/external_block.cpp\
 	 tc.common/byte_buffer.cpp\
+	 tc.common/timespan.cpp\
+	 tc.common/timestamp.cpp\
+	 tc.common/datetime.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs

@@ -5,6 +5,6 @@
 
 TEST(logger, trace) {
 	tc::log::logger logger;
-	std::string msg = logger.trace(TC_FFL, "Tag" , "Msg %d", 1);
+	std::string msg = logger.trace( "Tag" , "Msg %d", 42 );
 	gout << msg << gendl;
 }
