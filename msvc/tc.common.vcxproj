@@ -32,6 +32,7 @@
     <ClInclude Include="..\srcs\tc.common\stdafx.h" />
     <ClInclude Include="..\srcs\tc.common\targetver.h" />
     <ClInclude Include="..\srcs\tc.common\tc.hpp" />
+    <ClInclude Include="..\srcs\tc.common\threading.hpp" />
     <ClInclude Include="..\srcs\tc.common\timespan.hpp" />
     <ClInclude Include="..\srcs\tc.common\timestamp.hpp" />
   </ItemGroup>
@@ -51,6 +52,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\tc.cpp" />
+    <ClCompile Include="..\srcs\tc.common\threading.cpp" />
     <ClCompile Include="..\srcs\tc.common\timespan.cpp" />
     <ClCompile Include="..\srcs\tc.common\timestamp.cpp" />
   </ItemGroup>

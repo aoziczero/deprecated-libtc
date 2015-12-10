@@ -14,17 +14,22 @@
 
 #ifndef tc_log_write_forward
 #define tc_log_write_forward( ltype , tag , msg )\
-	tc::log::record record(ltype,tag);\
-	va_list args;\
-	va_start(args,msg);\
-	int len=tc_vsnprintf(record.message,4096,msg,args);\
-	va_end(args);\
-	if ( len <= 0 ) \
-		return ;\
-	return write( record );
+	if ( _level & ltype ) {\
+		tc::log::record record(ltype,tag);\
+		va_list args;\
+		va_start(args,msg);\
+		int len=tc_vsnprintf(record.message,4096,msg,args);\
+		va_end(args);\
+		if ( len <= 0 ) \
+			return ;\
+		return write( record );\
+	}\
+
 #endif
 
-tc::log::logger::logger(void){
+tc::log::logger::logger(void)
+	: _level( tc::log::all )
+{
 }
 
 tc::log::logger::~logger(void){
@@ -81,6 +86,15 @@ void tc::log::logger::add_writer( const char* encoder_name , tc::log::writer* w 
 	if ( it != _sinks.end() ) {
 		it->second->writers.push_back(w);
 	}
+}
+
+void tc::log::logger::enable(tc::log::type lt)
+{
+	_level |= lt;
+}
+void tc::log::logger::disable(tc::log::type lt)
+{
+	_level &= ~lt;
 }
 
 tc::log::logger::sink::sink( tc::log::encoder* e ) 

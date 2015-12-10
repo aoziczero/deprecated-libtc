@@ -33,6 +33,8 @@ TEST(logger, trace) {
 	gtest_console_writer wr;
 	logger.add_encoder(&si);
 	logger.add_writer( si.name() , &wr );
+	logger.disable(tc::log::debug);
+	logger.disable(tc::log::trace);
 	logger.trace( log_tag("Tag") , "Msg %d", 42 );
 	logger.debug( log_tag("Tag") , "Msg %d", 42 );
 	logger.info( log_tag("Tag") , "Msg %d", 42 ); 

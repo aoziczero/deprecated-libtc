@@ -25,7 +25,7 @@ bool simple_encoder::encode( const record& record
 			+ strlen(record.tag.file) 
 			+ strlen(record.tag.function) 
 			+ strlen(record.message)+ 1024);
-	tc::datetime dt(record.ts + tc::timespan::hours(9));
+	tc::datetime dt(record.ts + tc::timespan::localtime_offset());
 	int len = snprintf( reinterpret_cast<char*>(out.wr_ptr()) , out.space()
 			, "[%04d-%02d-%02d %02d:%02d:%02d][%s][%s][%s][%s:%s:%d]\r\n"
 			, dt.value().year , dt.value().month  , dt.value().day 

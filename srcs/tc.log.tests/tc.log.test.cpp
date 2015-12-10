@@ -9,10 +9,12 @@
 #pragma comment( lib ,"tc.log.lib")
 #endif
 
+#include <tc.common/timespan.hpp>
 
 int main( int argc , char* argv[] )
 {
 	testing::InitGoogleTest(&argc, argv);
+	tc::timespan::localtime_offset(tc::timespan::hours(9));
 	return RUN_ALL_TESTS();
 }
 

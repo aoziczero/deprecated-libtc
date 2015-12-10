@@ -7,7 +7,7 @@
 #pragma once
 
 #include "targetver.h"
-
+#pragma warning( disable : 4091 )
 #define WIN32_LEAN_AND_MEAN         
 #define NOMINMAX
 #include <WinSock2.h>

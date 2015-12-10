@@ -55,6 +55,8 @@ public:
 	static timespan milliseconds( s64 c );
 	static timespan microseconds( s64 c );
 
+	static timespan localtime_offset(void);
+	static void localtime_offset(const timespan& ts);
 private:
 	s64 _delta;
 };

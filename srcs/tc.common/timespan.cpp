@@ -3,6 +3,9 @@
 #include "timestamp.hpp"
 
 namespace tc{
+namespace impl{
+	static timespan localtime_offset;
+}
 
 timespan::timespan( void )
 	: _delta(0)
@@ -131,6 +134,16 @@ timespan timespan::milliseconds( s64 c ) {
 
 timespan timespan::microseconds( s64 c ) {
 	return timespan( c );
+}
+
+timespan timespan::localtime_offset(void)
+{
+	return impl::localtime_offset;
+}
+
+void tc::timespan::localtime_offset(const timespan & ts)
+{
+	impl::localtime_offset = ts;
 }
 
 }

@@ -9,20 +9,50 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\srcs\tc.log\stdafx.cpp" />
+    <ClCompile Include="..\srcs\tc.log\simple_encoder.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\tag.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
     <ClCompile Include="..\srcs\tc.log\tc.log.cpp">
       <Filter>tc\log</Filter>
     </ClCompile>
-    <ClCompile Include="..\srcs\tc.log\stdafx.cpp" />
+    <ClCompile Include="..\srcs\tc.log\writer.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\encoder.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
     <ClCompile Include="..\srcs\tc.log\logger.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\record.cpp">
       <Filter>tc\log</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\srcs\tc.log\stdafx.h" />
+    <ClInclude Include="..\srcs\tc.log\targetver.h" />
+    <ClInclude Include="..\srcs\tc.log\record.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\simple_encoder.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\tag.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
     <ClInclude Include="..\srcs\tc.log\tc.log.hpp">
       <Filter>tc\log</Filter>
     </ClInclude>
-    <ClInclude Include="..\srcs\tc.log\stdafx.h" />
-    <ClInclude Include="..\srcs\tc.log\targetver.h" />
+    <ClInclude Include="..\srcs\tc.log\writer.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\encoder.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
     <ClInclude Include="..\srcs\tc.log\logger.hpp">
       <Filter>tc\log</Filter>
     </ClInclude>

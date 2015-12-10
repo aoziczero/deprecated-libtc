@@ -27,6 +27,9 @@ public:
 
 	void add_encoder( tc::log::encoder* e );
 	void add_writer( const char* encoder_name , tc::log::writer* w );
+
+	void enable(tc::log::type lt);
+	void disable(tc::log::type lt);
 private:
 	tc::threading::spinlock _lock;		
 	struct sink {
@@ -34,6 +37,7 @@ private:
 		std::vector< tc::log::writer* > writers;
 		sink( tc::log::encoder* e );
 	};
+	int _level;
 	std::map< std::string , sink* > _sinks;
 };
 
