@@ -4,6 +4,7 @@ TARGET=libtc.common
 SRC_ROOT=../srcs
 SRCS=tc.common/tc.cpp\
 	 tc.common/container_of.cpp\
+	 tc.common/threading.cpp\
      tc.common/spinlock.cpp\
 	 tc.common/simple_block.cpp\
 	 tc.common/rc_block.cpp\

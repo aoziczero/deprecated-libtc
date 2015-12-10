@@ -1,0 +1,24 @@
+include makepre
+
+TARGET=libtc.log
+SRC_ROOT=../srcs
+SRCS=tc.log/tc.log.cpp\
+	 tc.log/logger.cpp\
+	 tc.log/record.cpp\
+	 tc.log/tag.cpp\
+	 tc.log/encoder.cpp\
+	 tc.log/writer.cpp\
+	 tc.log/simple_encoder.cpp\
+
+OUT_DIR=../build
+CPPFLAGS+=-I../srcs
+
+SO_MAJOR=1
+SO_MINOR=0
+CFLAGS=
+SO_LDFLAGS =-lpthread 
+SO_LDFLAGS+= -L./../build/libtc.common/static -ltc.common
+
+include makepost_static
+include makepost_shared
+include makepost_common

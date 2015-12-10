@@ -18,7 +18,7 @@ struct position {
 	void swap(position& rhs);
 };
 
-template < class Block >
+template < class Block = tc::buffer::rc_block >
 class byte_buffer {
 public:
 	byte_buffer(void) {

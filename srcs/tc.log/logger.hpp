@@ -1,8 +1,13 @@
 #ifndef __tc_log_logger_h__
 #define __tc_log_logger_h__
 
-#include <tc.log/tag.hpp>
 #include <tc.log/record.hpp>
+#include <tc.log/encoder.hpp>
+#include <tc.log/writer.hpp>
+#include <tc.common/spinlock.hpp>
+
+#include <vector>
+#include <map>
 
 namespace tc {
 namespace log {
@@ -12,15 +17,24 @@ public:
 	logger(void);
 	~logger(void);
 
-	std::string trace( const tag& t , const char* msg, ...);
-	std::string debug( const tag& t , const char* msg, ...);
-	std::string info( const tag& t , const char* msg, ...);
-	std::string warn( const tag& t , const char* msg, ...);
-	std::string error( const tag& t , const char* msg, ...);
-	std::string fatal( const tag& t , const char* msg, ...);
-	std::string write( tc::log::type t , const tag& tag , const char* msg , int msg_len );
-private:
+	void trace( const tag& t , const char* msg, ...);
+	void debug( const tag& t , const char* msg, ...);
+	void info( const tag& t , const char* msg, ...);
+	void warn( const tag& t , const char* msg, ...);
+	void error( const tag& t , const char* msg, ...);
+	void fatal( const tag& t , const char* msg, ...);
+	void write( const tc::log::record& record );
 
+	void add_encoder( tc::log::encoder* e );
+	void add_writer( const char* encoder_name , tc::log::writer* w );
+private:
+	tc::threading::spinlock _lock;		
+	struct sink {
+		tc::log::encoder* encoder;
+		std::vector< tc::log::writer* > writers;
+		sink( tc::log::encoder* e );
+	};
+	std::map< std::string , sink* > _sinks;
 };
 
 }
