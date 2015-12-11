@@ -13,6 +13,8 @@ public:
 	virtual const char* name( void );
 	virtual bool encode( const record& r 
 			, tc::buffer::byte_buffer<>& out );
+
+	static const char* class_name( void );
 };
 
 }}

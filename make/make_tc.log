@@ -9,6 +9,8 @@ SRCS=tc.log/tc.log.cpp\
 	 tc.log/encoder.cpp\
 	 tc.log/writer.cpp\
 	 tc.log/simple_encoder.cpp\
+	 tc.log/factory.cpp\
+	 tc.log/registry.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs

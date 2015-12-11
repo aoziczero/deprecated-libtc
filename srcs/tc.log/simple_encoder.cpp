@@ -14,7 +14,7 @@ simple_encoder::~simple_encoder( void ) {
 }
 
 const char* simple_encoder::name( void ) {
-	return "simple_encoder";
+	return simple_encoder::class_name();
 }
 
 bool simple_encoder::encode( const record& record
@@ -34,6 +34,10 @@ bool simple_encoder::encode( const record& record
 			, record.tag.name , record.message , record.tag.file , record.tag.function , record.tag.line );
 	out.wr_ptr(len+1);
 	return true;
+}
+
+const char* simple_encoder::class_name( void ) {
+	return "simple_encoder";
 }
 
 }}
