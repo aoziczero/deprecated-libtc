@@ -9,6 +9,13 @@
 namespace tc { 
 namespace log {
 
+/*!
+ * configure in code level
+ * registry use factory 
+ * 1. factory register
+ * 2. registry load config from file
+ * 3. registry alloc instances by using factory
+ */
 class factory {
 public:
 	tc::log::encoder* create_encoder( const std::string& name 

@@ -6,6 +6,11 @@
 namespace tc { namespace log {
 class encoder;
 class writer;
+
+/*!
+ * \todo 1. define config file format\n
+ * 2. implement load function
+ */
 class registry {
 public:
 	tc::log::encoder* singleton_encoder( const std::string& name );
@@ -15,8 +20,7 @@ public:
 	void register_writer( const std::string& name , tc::log::writer* e );
 
 	/*!
-	 * /todo define file format ( based on xml )
-	 * /todo init singleton encoders / writers
+	 * init singleton encoders / writers
 	 */
 	bool load( const std::string& file );
 public:

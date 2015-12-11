@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "registry.hpp"
 #include "factory.hpp"
+#include "tinyxml2/tinyxml2.h"
 
 namespace tc { namespace log {
 
@@ -16,7 +17,6 @@ tc::log::writer* registry::singleton_writer( const std::string& name ) {
 		return _writers[name];
 	}
 	return nullptr;
-
 }
 
 void registry::register_encoder( const std::string& name , tc::log::encoder* e ) {
@@ -41,6 +41,8 @@ registry::~registry( void ) {
 
 }
 
-
+bool registry::load( const std::string& file ) {
+	return false;
+}
 
 }}

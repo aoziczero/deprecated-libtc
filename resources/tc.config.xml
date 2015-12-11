@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tc>
+	<log>
+		<encoder>
+			<!--factory::register_encoder(name)-->
+			<name>simple_encoder</name>
+			<param></param>
+		</encoder>
+		<encoder>
+			<name>complex_encoder</name>
+			<param></param>
+		</encoder>
+		<writer>
+			<!--factory::register_writer(name)-->
+			<name></name>
+			<param></param>
+		</writer>
+		<registry>
+			<singleton type=encoder>
+				<name>simple_encoder</name>
+				<encoder-name>simple_encoder</encoder-name>
+			</singleton>
+			<singleton type=writer>
+				<name>console_writer</name>
+				<writer_name>console_writer</writer_name>
+			</singleton>
+		</registry>
+		<logger_builder>
+			<logger>
+				<trace>false</trace>
+				<sinks>
+					<sink>
+						<encoder source=registry>simple_encoder</encoder>
+						<writer source=factory>console_writer</writer>
+						<writer source=registry>file_writer</writer>
+					<sink>
+				</sinks>
+			</logger>
+			<logger>
+				<name>ioengine</name>
+				<trace>false</trace>
+				<sinks>
+					<sink>
+						<encoder source=registry>simple_encoder</encoder>
+						<writer source=factory>console_writer</writer>
+						<writer source=registry>file_writer</writer>
+					<sink>
+				</sinks>
+			</logger>
+		</logger_builder>
+	</log>
+</tc>

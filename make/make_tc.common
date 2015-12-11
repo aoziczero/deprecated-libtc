@@ -13,6 +13,7 @@ SRCS=tc.common/tc.cpp\
 	 tc.common/timespan.cpp\
 	 tc.common/timestamp.cpp\
 	 tc.common/datetime.cpp\
+	 tinyxml2/tinyxml2.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs
