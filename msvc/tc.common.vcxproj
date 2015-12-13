@@ -35,6 +35,7 @@
     <ClInclude Include="..\srcs\tc.common\threading.hpp" />
     <ClInclude Include="..\srcs\tc.common\timespan.hpp" />
     <ClInclude Include="..\srcs\tc.common\timestamp.hpp" />
+    <ClInclude Include="..\srcs\tinyxml2\tinyxml2.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\byte_buffer.cpp" />
@@ -55,6 +56,12 @@
     <ClCompile Include="..\srcs\tc.common\threading.cpp" />
     <ClCompile Include="..\srcs\tc.common\timespan.cpp" />
     <ClCompile Include="..\srcs\tc.common\timestamp.cpp" />
+    <ClCompile Include="..\srcs\tinyxml2\tinyxml2.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{AB658C9D-5799-4E5F-AB64-D042F0F4CBC1}</ProjectGuid>

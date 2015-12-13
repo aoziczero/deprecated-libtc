@@ -31,6 +31,18 @@
     <ClCompile Include="..\srcs\tc.log\record.cpp">
       <Filter>tc\log</Filter>
     </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\registry.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\factory.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\context.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tc.log\xml_context.cpp">
+      <Filter>tc\log</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\srcs\tc.log\stdafx.h" />
@@ -54,6 +66,18 @@
       <Filter>tc\log</Filter>
     </ClInclude>
     <ClInclude Include="..\srcs\tc.log\logger.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\registry.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\factory.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\context.hpp">
+      <Filter>tc\log</Filter>
+    </ClInclude>
+    <ClInclude Include="..\srcs\tc.log\xml_context.hpp">
       <Filter>tc\log</Filter>
     </ClInclude>
   </ItemGroup>

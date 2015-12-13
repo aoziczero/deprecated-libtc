@@ -1,52 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <tc>
 	<log>
-		<encoder>
-			<!--factory::register_encoder(name)-->
-			<name>simple_encoder</name>
-			<param></param>
-		</encoder>
-		<encoder>
-			<name>complex_encoder</name>
-			<param></param>
-		</encoder>
-		<writer>
-			<!--factory::register_writer(name)-->
-			<name></name>
-			<param></param>
-		</writer>
-		<registry>
-			<singleton type=encoder>
-				<name>simple_encoder</name>
-				<encoder-name>simple_encoder</encoder-name>
-			</singleton>
-			<singleton type=writer>
-				<name>console_writer</name>
-				<writer_name>console_writer</writer_name>
-			</singleton>
-		</registry>
-		<logger_builder>
-			<logger>
-				<trace>false</trace>
-				<sinks>
-					<sink>
-						<encoder source=registry>simple_encoder</encoder>
-						<writer source=factory>console_writer</writer>
-						<writer source=registry>file_writer</writer>
-					<sink>
-				</sinks>
-			</logger>
-			<logger>
-				<name>ioengine</name>
-				<trace>false</trace>
-				<sinks>
-					<sink>
-						<encoder source=registry>simple_encoder</encoder>
-						<writer source=factory>console_writer</writer>
-						<writer source=registry>file_writer</writer>
-					<sink>
-				</sinks>
-			</logger>
-		</logger_builder>
+    <encoder id="simple_encoder" factory_id="simple_encoder"/>
+    <writer id="console_writer" factory_id="console_writer" />
+    <builder>
+      <!-- default -->
+      <logger id="logger">
+        <!-- trace debug warn info error fatal -->
+        <level trace="false" />
+        <!-- source factor / registry -->
+        <sink>
+          <encoder id="simple_encoder" source="registry">
+            <param></param>
+          </encoder>
+          <wrtier id="console_writer" source="registry">
+            <param></param>
+          </wrtier>
+         </sink>
+      </logger>
+      <logger id="logger1">
+        <!-- trace debug warn info error fatal -->
+        <level trace="false" debug="false" />
+        <!-- source factor / registry -->
+        <sink>
+          <encoder id="simple_encoder" source="factory">
+            <param></param>
+          </encoder>
+          <wrtier id="console_writer" source="factory">
+            <param></param>
+          </wrtier>
+        </sink>
+      </logger>
+    </builder>
 	</log>
 </tc>

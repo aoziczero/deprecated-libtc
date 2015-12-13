@@ -81,7 +81,7 @@ void tc::log::logger::add_encoder( tc::log::encoder* e ){
 	_sinks[ e->name() ] = new sink(e);
 }
 
-void tc::log::logger::add_writer( const char* encoder_name , tc::log::writer* w ){
+void tc::log::logger::add_writer(const std::string& encoder_name, tc::log::writer* w ){
 	auto it = _sinks.find(encoder_name);
 	if ( it != _sinks.end() ) {
 		it->second->writers.push_back(w);
@@ -95,6 +95,10 @@ void tc::log::logger::enable(tc::log::type lt)
 void tc::log::logger::disable(tc::log::type lt)
 {
 	_level &= ~lt;
+}
+
+s32&  tc::log::logger::levels(void) {
+	return _level;
 }
 
 tc::log::logger::sink::sink( tc::log::encoder* e ) 

@@ -36,6 +36,7 @@
 
 #include <gtest/gtest.h>
 #include <tc.common/tc.hpp>
+#include <tc.log/writer.hpp>
 
 // TODO: reference additional headers your program requires here
 
@@ -91,3 +92,28 @@ private:
 
 static gout_impl gout;
 static gendl_impl gendl;
+
+
+class gtest_console_writer : public tc::log::writer {
+public:
+	gtest_console_writer(void) {}
+	virtual ~gtest_console_writer(void) {}
+	virtual const char* name(void) {
+		return "gtest_console_writer";
+	}
+	virtual void write(const tc::log::record& r
+		, const tc::buffer::byte_buffer<>& out)
+	{
+		testing::internal::ColoredPrintf(
+			testing::internal::COLOR_GREEN, "[   USER   ] ");
+		testing::internal::GTestColor color = testing::internal::COLOR_YELLOW;
+		if (r.type == tc::log::debug) {
+			color = testing::internal::COLOR_RED;
+		}
+		if (r.type == tc::log::error) {
+			color = testing::internal::COLOR_GREEN;
+		}
+		testing::internal::ColoredPrintf(color, reinterpret_cast<char*>(out.rd_ptr()));
+
+	}
+};

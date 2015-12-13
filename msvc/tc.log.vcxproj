@@ -19,9 +19,12 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\srcs\tc.log\context.cpp" />
     <ClCompile Include="..\srcs\tc.log\encoder.cpp" />
+    <ClCompile Include="..\srcs\tc.log\factory.cpp" />
     <ClCompile Include="..\srcs\tc.log\logger.cpp" />
     <ClCompile Include="..\srcs\tc.log\record.cpp" />
+    <ClCompile Include="..\srcs\tc.log\registry.cpp" />
     <ClCompile Include="..\srcs\tc.log\simple_encoder.cpp" />
     <ClCompile Include="..\srcs\tc.log\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -32,17 +35,22 @@
     <ClCompile Include="..\srcs\tc.log\tag.cpp" />
     <ClCompile Include="..\srcs\tc.log\tc.log.cpp" />
     <ClCompile Include="..\srcs\tc.log\writer.cpp" />
+    <ClCompile Include="..\srcs\tc.log\xml_context.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\srcs\tc.log\context.hpp" />
     <ClInclude Include="..\srcs\tc.log\encoder.hpp" />
+    <ClInclude Include="..\srcs\tc.log\factory.hpp" />
     <ClInclude Include="..\srcs\tc.log\logger.hpp" />
     <ClInclude Include="..\srcs\tc.log\record.hpp" />
+    <ClInclude Include="..\srcs\tc.log\registry.hpp" />
     <ClInclude Include="..\srcs\tc.log\simple_encoder.hpp" />
     <ClInclude Include="..\srcs\tc.log\stdafx.h" />
     <ClInclude Include="..\srcs\tc.log\tag.hpp" />
     <ClInclude Include="..\srcs\tc.log\targetver.h" />
     <ClInclude Include="..\srcs\tc.log\tc.log.hpp" />
     <ClInclude Include="..\srcs\tc.log\writer.hpp" />
+    <ClInclude Include="..\srcs\tc.log\xml_context.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{B3E46C21-DB3F-4EA7-89D8-96C0E3227A2E}</ProjectGuid>

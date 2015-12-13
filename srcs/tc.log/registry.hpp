@@ -6,23 +6,21 @@
 namespace tc { namespace log {
 class encoder;
 class writer;
-
+class logger;
 /*!
  * \todo 1. define config file format\n
  * 2. implement load function
  */
 class registry {
 public:
-	tc::log::encoder* singleton_encoder( const std::string& name );
-	tc::log::writer* singleton_writer( const std::string& name );
+	tc::log::encoder*  encoder(const std::string& id);
+	void encoder(const std::string& id , tc::log::encoder* e );
 
-	void register_encoder( const std::string& name , tc::log::encoder* e );
-	void register_writer( const std::string& name , tc::log::writer* e );
+	tc::log::writer*  writer(const std::string& id);
+	void writer(const std::string& id , tc::log::writer* e );
 
-	/*!
-	 * init singleton encoders / writers
-	 */
-	bool load( const std::string& file );
+	tc::log::logger* logger(const std::string& id);
+	void logger(const std::string& id , tc::log::logger* logger);
 public:
 	static registry& instance( void );
 private:
@@ -30,9 +28,9 @@ private:
 	~registry( void );
 private:
 	tc::threading::spinlock _lock;
-	std::map< std::string , tc::log::encoder* > _encoders;
-	std::map< std::string , tc::log::writer* > _writers;
-
+	std::map< std::string, tc::log::encoder* > _encoders;
+	std::map< std::string, tc::log::writer* > _writers;
+	std::map< std::string, tc::log::logger* > _loggers;
 };
 
 }}

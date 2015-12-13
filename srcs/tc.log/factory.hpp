@@ -16,18 +16,26 @@ namespace log {
  * 2. registry load config from file
  * 3. registry alloc instances by using factory
  */
-class factory {
-public:
-	tc::log::encoder* create_encoder( const std::string& name 
-			, const std::string& param );
+	class factory {
+	public:
+		tc::log::encoder* create_encoder(const std::string& name
+			, const std::string& param);
 
-	tc::log::writer* create_writer( const std::string& name 
-			, const std::string& param );
+		tc::log::writer* create_writer(const std::string& name
+			, const std::string& param);
 
-	void register_encoder( const std::string& name 
-			, const tc::function< tc::log::encoder* ( const std::string& param ) >& encoder_create );
-	void register_writer( const std::string& name 
-			, const tc::function< tc::log::writer* ( const std::string& param ) >& writer_create );
+		void register_encoder(const std::string& name
+			, const tc::function< tc::log::encoder* (const std::string& param) >& encoder_create);
+		void register_writer(const std::string& name
+			, const tc::function< tc::log::writer* (const std::string& param) >& writer_create);
+
+		template < typename T >
+		class creater_no_param{
+		public:
+			T* operator()(const std::string&) {
+				return new T();
+			}
+		};
 public:
 	static factory& instance(void);
 private:

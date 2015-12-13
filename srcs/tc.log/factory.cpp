@@ -1,6 +1,5 @@
 #include "stdafx.h"
 #include "factory.hpp"
-#include "simple_encoder.hpp"
 
 namespace tc {
 namespace log {
@@ -12,10 +11,7 @@ factory& factory::instance(void){
 }
 
 factory::factory( void ){
-	register_encoder( simple_encoder::class_name() , 
-			[] (const std::string& )-> tc::log::encoder*  {
-				return new simple_encoder();
-			});
+
 }
 
 factory::~factory( void ) {

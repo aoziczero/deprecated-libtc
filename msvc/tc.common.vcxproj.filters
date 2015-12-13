@@ -58,6 +58,9 @@
     <ClInclude Include="..\srcs\tc.common\threading.hpp">
       <Filter>tc</Filter>
     </ClInclude>
+    <ClInclude Include="..\srcs\tinyxml2\tinyxml2.h">
+      <Filter>tc</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\srcs\tc.common\stdafx.cpp">
@@ -100,6 +103,9 @@
       <Filter>tc</Filter>
     </ClCompile>
     <ClCompile Include="..\srcs\tc.common\threading.cpp">
+      <Filter>tc</Filter>
+    </ClCompile>
+    <ClCompile Include="..\srcs\tinyxml2\tinyxml2.cpp">
       <Filter>tc</Filter>
     </ClCompile>
   </ItemGroup>

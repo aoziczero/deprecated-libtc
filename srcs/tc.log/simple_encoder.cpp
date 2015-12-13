@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "simple_encoder.hpp"
 #include "tc.common/datetime.hpp"
+#include "factory.hpp"
 
 namespace tc {
 namespace log {

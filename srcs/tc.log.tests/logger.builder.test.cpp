@@ -3,21 +3,17 @@
 #include "tc.log/simple_encoder.hpp"
 #include "tc.log/registry.hpp"
 #include "tc.log/factory.hpp"
+#include "tc.log/context.hpp"
+#include "tc.log/xml_context.hpp"
 #include <thread>
 
 
-TEST(logger, trace) {
-	tc::log::logger logger;
+TEST(logger, builder) {
+	tc::log::context::instance(new tc::log::xml_context(""));
 
-	std::string encoder = tc::log::simple_encoder::class_name();
-	std::string writer = "gtest_console_writer";
+	tc::log::logger& logger = tc::log::context::instance().logger("");
 
-	logger.add_encoder(tc::log::registry::instance().encoder(encoder));
-	logger.add_writer(encoder,
-				tc::log::registry::instance().writer(writer));
-	
-	logger.disable(tc::log::debug);
-	logger.disable(tc::log::trace);
+
 	logger.trace( log_tag("Tag") , "Msg %d", 42 );
 	logger.debug( log_tag("Tag") , "Msg %d", 42 );
 	logger.info( log_tag("Tag") , "Msg %d", 42 ); 
