@@ -24,7 +24,7 @@ log::logger* xml_context::load_logger_from_config(const std::string& name) {
 		context::logger_config* cfg = _configs[name];
 		log::logger* logger = new log::logger();
 		logger->levels() = cfg->levels;
-		for each(context::sink_config* scfg in cfg->sinks) {
+		for (context::sink_config* scfg : cfg->sinks) {
 			log::encoder* encoder = nullptr;
 			if (scfg->encoder.source == "factory") {
 				encoder = tc::log::factory::instance().create_encoder(scfg->encoder.id, scfg->encoder.param);
@@ -39,7 +39,7 @@ log::logger* xml_context::load_logger_from_config(const std::string& name) {
 			}
 			if (encoder) {
 				logger->add_encoder(encoder);
-				for each(const context::config& cfg in scfg->writers) {
+				for (const context::config& cfg : scfg->writers) {
 					tc::log::writer* writer = nullptr;
 					if (cfg.source == "factory") {
 						writer = tc::log::factory::instance().create_writer(cfg.id, cfg.param);

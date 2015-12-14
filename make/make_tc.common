@@ -2,18 +2,20 @@ include makepre
 
 TARGET=libtc.common
 SRC_ROOT=../srcs
-SRCS=tc.common/tc.cpp\
-	 tc.common/container_of.cpp\
-	 tc.common/threading.cpp\
-     tc.common/spinlock.cpp\
-	 tc.common/simple_block.cpp\
-	 tc.common/rc_block.cpp\
-	 tc.common/external_block.cpp\
-	 tc.common/byte_buffer.cpp\
-	 tc.common/timespan.cpp\
-	 tc.common/timestamp.cpp\
-	 tc.common/datetime.cpp\
-	 tinyxml2/tinyxml2.cpp\
+SRCS= \
+	tc.common/byte_buffer.cpp\
+	tc.common/container_of.cpp\
+	tc.common/datetime.cpp\
+	tc.common/external_block.cpp\
+	tc.common/operation.cpp\
+	tc.common/rc_block.cpp\
+	tc.common/simple_block.cpp\
+    tc.common/spinlock.cpp\
+	tc.common/tc.cpp\
+	tc.common/threading.cpp\
+	tc.common/timespan.cpp\
+	tc.common/timestamp.cpp\
+	tinyxml2/tinyxml2.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs

@@ -25,8 +25,9 @@ public:
 	void fatal( const tag& t , const char* msg, ...);
 	void write( const tc::log::record& record );
 
-	void add_encoder( tc::log::encoder* e );
-	void add_writer( const std::string& encoder_name , tc::log::writer* w );
+	void add_encoder( const std::shared_ptr<tc::log::encoder>& e );
+	void add_writer( const std::string& encoder_name 
+			, const std::shared_ptr<tc::log::writer>& w );
 
 	void enable(tc::log::type lt);
 	void disable(tc::log::type lt);
@@ -34,12 +35,12 @@ public:
 private:
 	tc::threading::spinlock _lock;		
 	struct sink {
-		tc::log::encoder* encoder;
-		std::vector< tc::log::writer* > writers;
-		sink( tc::log::encoder* e );
+		std::shared_ptr<tc::log::encoder> encoder;
+		std::vector< std::shared_ptr<tc::log::writer> > writers;
+		sink( const std::shared_ptr<tc::log::encoder> e);
 	};
 	s32 _level;
-	std::map< std::string , sink* > _sinks;
+	std::map< std::string , std::shared_ptr<sink> > _sinks;
 	std::string _name;
 };
 

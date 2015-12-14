@@ -6,7 +6,7 @@
 
 namespace tc { namespace log {
 
-tc::log::encoder* registry::encoder( const std::string& id ) {
+std::shared_ptr<tc::log::encoder> registry::encoder( const std::string& id ) {
 	tc::threading::spinlock::guard guard(_lock);
 	if ( _encoders.find( id ) != _encoders.end() ) {
 		return _encoders[id];
@@ -14,7 +14,7 @@ tc::log::encoder* registry::encoder( const std::string& id ) {
 	return nullptr;
 }
 
-tc::log::writer* registry::writer( const std::string& id ) {
+std::shared_ptr<tc::log::writer> registry::writer( const std::string& id ) {
 	tc::threading::spinlock::guard guard(_lock);
 	if ( _writers.find( id ) != _writers.end() ) {
 		return _writers[id];
@@ -22,24 +22,24 @@ tc::log::writer* registry::writer( const std::string& id ) {
 	return nullptr;
 }
 
-void registry::encoder(const std::string& id,  tc::log::encoder* e ) {
+void registry::encoder(const std::string& id, const std::shared_ptr<tc::log::encoder>& e ) {
 	tc::threading::spinlock::guard guard(_lock);
 	_encoders[id] = e;
 }
 
-void registry::writer(const std::string& id , tc::log::writer* w ) {
+void registry::writer(const std::string& id , const std::shared_ptr<tc::log::writer>& w ) {
 	tc::threading::spinlock::guard guard(_lock);
 	_writers[id] = w;
 }
 
-tc::log::logger* registry::logger(const std::string& id) {
+std::shared_ptr<tc::log::logger> registry::logger(const std::string& id) {
 	tc::threading::spinlock::guard guard(_lock);
 	if (_loggers.find(id) != _loggers.end()) {
 		return _loggers[id];
 	}
 	return nullptr;
 }
-void registry::logger(const std::string& id , tc::log::logger* logger) {
+void registry::logger(const std::string& id , const std::shared_ptr<tc::log::logger>& logger) {
 	tc::threading::spinlock::guard guard(_lock);
 	_loggers[id] = logger;
 }

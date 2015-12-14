@@ -64,7 +64,7 @@ void tc::log::logger::write( const tc::log::record& record ){
     auto it = _sinks.begin();
     while ( it != _sinks.end() ) {
         tc::buffer::byte_buffer<> buf(4096);
-		sink* ps = it->second;
+		auto ps = it->second;
 		if ( ps && !ps->writers.empty() ){
 			if ( ps->encoder->encode( record , buf )) {
 				for ( auto w : ps->writers ) {
@@ -76,12 +76,13 @@ void tc::log::logger::write( const tc::log::record& record ){
     }
 }
 
-void tc::log::logger::add_encoder( tc::log::encoder* e ){
+void tc::log::logger::add_encoder( const std::shared_ptr<tc::log::encoder>& e ){
     tc::threading::spinlock::guard guard(_lock);
-	_sinks[ e->name() ] = new sink(e);
+	_sinks[ e->name() ] = std::shared_ptr<sink>(new sink(e));
 }
 
-void tc::log::logger::add_writer(const std::string& encoder_name, tc::log::writer* w ){
+void tc::log::logger::add_writer(const std::string& encoder_name
+		, const std::shared_ptr<tc::log::writer>& w ){
 	auto it = _sinks.find(encoder_name);
 	if ( it != _sinks.end() ) {
 		it->second->writers.push_back(w);
@@ -101,7 +102,7 @@ s32&  tc::log::logger::levels(void) {
 	return _level;
 }
 
-tc::log::logger::sink::sink( tc::log::encoder* e ) 
+tc::log::logger::sink::sink( const std::shared_ptr<tc::log::encoder> e)
 	: encoder(e)
 {
 }

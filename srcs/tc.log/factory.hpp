@@ -18,22 +18,22 @@ namespace log {
  */
 	class factory {
 	public:
-		tc::log::encoder* create_encoder(const std::string& name
+		std::shared_ptr<tc::log::encoder> create_encoder(const std::string& name
 			, const std::string& param);
 
-		tc::log::writer* create_writer(const std::string& name
+		std::shared_ptr<tc::log::writer> create_writer(const std::string& name
 			, const std::string& param);
 
 		void register_encoder(const std::string& name
-			, const tc::function< tc::log::encoder* (const std::string& param) >& encoder_create);
+			, const tc::function< std::shared_ptr<tc::log::encoder> (const std::string& param) >& encoder_create);
 		void register_writer(const std::string& name
-			, const tc::function< tc::log::writer* (const std::string& param) >& writer_create);
+			, const tc::function< std::shared_ptr<tc::log::writer> (const std::string& param) >& writer_create);
 
 		template < typename T >
 		class creater_no_param{
 		public:
-			T* operator()(const std::string&) {
-				return new T();
+			std::shared_ptr<T> operator()(const std::string&) {
+				return std::shared_ptr<T>( new T());
 			}
 		};
 public:
@@ -43,8 +43,12 @@ private:
 	~factory( void );
 	
 private:
-	std::map< std::string , tc::function< tc::log::encoder* ( const std::string& param ) > > _encoders;
-	std::map< std::string , tc::function< tc::log::writer* ( const std::string& param ) > > _writers;
+	std::map< std::string 
+		, tc::function< std::shared_ptr<tc::log::encoder> ( const std::string& param ) > 
+		> _encoders;
+	std::map< std::string 
+		, tc::function< std::shared_ptr<tc::log::writer> ( const std::string& param ) > 
+		> _writers;
 };
 
 

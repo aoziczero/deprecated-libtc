@@ -2,15 +2,18 @@ include makepre
 
 TARGET=libtc.log
 SRC_ROOT=../srcs
-SRCS=tc.log/tc.log.cpp\
-	 tc.log/logger.cpp\
-	 tc.log/record.cpp\
-	 tc.log/tag.cpp\
-	 tc.log/encoder.cpp\
-	 tc.log/writer.cpp\
-	 tc.log/simple_encoder.cpp\
-	 tc.log/factory.cpp\
-	 tc.log/registry.cpp\
+SRCS=\
+	tc.log/context.cpp\
+	tc.log/encoder.cpp\
+	tc.log/factory.cpp\
+	tc.log/logger.cpp\
+	tc.log/record.cpp\
+	tc.log/registry.cpp\
+	tc.log/simple_encoder.cpp\
+	tc.log/tag.cpp\
+	tc.log/tc.log.cpp\
+	tc.log/writer.cpp\
+	tc.log/xml_context.cpp\
 
 OUT_DIR=../build
 CPPFLAGS+=-I../srcs
